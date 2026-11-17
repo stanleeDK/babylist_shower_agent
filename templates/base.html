@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Baby Shower Agent{% endblock %}</title>
+<style>
+  :root {
+    --bg:#f7f6f3; --card:#fff; --ink:#1c1c1e; --muted:#6b6b70; --line:#e6e5e1;
+    --accent:#2f5bea; --accent-ink:#fff; --green:#1f7a45; --green-bg:#e3f4ea;
+    --amber:#8a5a00; --amber-bg:#fdf1d8; --red:#b42318; --red-bg:#fde8e6; --pink:#fbe7ef;
+  }
+  * { box-sizing: border-box; }
+  html, body { height:100%; }
+  body { margin:0; font:15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+         color:var(--ink); background:var(--bg); display:flex; flex-direction:column; }
+  a { color:var(--accent); text-decoration:none; }
+  header.top { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 22px;
+               border-bottom:1px solid var(--line); background:var(--card); flex:none; }
+  header.top .brand { font-weight:700; letter-spacing:-.01em; color:var(--ink); white-space:nowrap; }
+  header.top .who { color:var(--muted); font-size:13px; display:flex; gap:10px; align-items:center; white-space:nowrap; }
+  main.narrow { max-width:900px; width:100%; margin:0 auto; padding:28px; }
+  h1 { font-size:26px; letter-spacing:-.02em; margin:0 0 6px; }
+  h2 { font-size:16px; margin:0 0 10px; }
+  .muted { color:var(--muted); }
+  .small { font-size:13px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; border:0; border-radius:9px; padding:9px 15px;
+         font:inherit; font-weight:600; cursor:pointer; background:var(--accent); color:var(--accent-ink); }
+  .btn.secondary { background:#eceae5; color:var(--ink); }
+  .btn.ghost { background:none; color:var(--muted); padding:6px 8px; font-weight:500; }
+  .btn.small { padding:6px 11px; font-size:13px; }
+  .btn:disabled { opacity:.45; cursor:default; }
+  .pill { display:inline-block; padding:2px 10px; border-radius:99px; font-size:12px; font-weight:600; }
+  .pill.collecting, .pill.invited, .pill.setup { background:var(--amber-bg); color:var(--amber); }
+  .pill.proposed { background:#e6ecfd; color:var(--accent); }
+  .pill.booked, .pill.responded { background:var(--green-bg); color:var(--green); }
+  .pill.stopped, .pill.declined, .pill.done { background:#eee; color:#666; }
+  .error { background:var(--red-bg); color:var(--red); border-radius:9px; padding:9px 13px; margin:10px 0; }
+  .notice { background:var(--green-bg); color:var(--green); border-radius:9px; padding:9px 13px; margin:10px 0; }
+  input, textarea, select { font:inherit; border:1px solid var(--line); border-radius:8px; padding:9px 11px;
+                            background:#fff; width:100%; }
+</style>
+{% block head %}{% endblock %}
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/showers">Baby Shower Agent</a>
+  <div class="who">
+    {% if user %}{{ user.email }}{% endif %}
+    <form method="post" action="/reset"
+          onsubmit="return confirm('Reset the demo?\n\nThis deletes your showers (and any calendar events they created), removes this app\'s access to your Google account, and starts over.')">
+      <button class="btn secondary small">Reset demo</button>
+    </form>
+    {% if user %}<form method="post" action="/auth/logout"><button class="btn ghost small">Sign out</button></form>{% endif %}
+  </div>
+</header>
+{% block body %}{% endblock %}
+</body>
+</html>

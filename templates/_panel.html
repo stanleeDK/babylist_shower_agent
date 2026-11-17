@@ -1,0 +1,223 @@
+{# The right column's tabs. Re-rendered on every poll; the page swaps in only what changed. #}
+
+
+{% set responded = event.attending|selectattr("status", "ne", "invited")|list %}
+<div class="tab-body" data-tab="availability" data-sig="{{ event.round }}|{{ responded|length }}|{{ event.attending|length }}|{{ event.status }}|{{ summary.dates_everyone_free|length }}|{{ (event.venue or {}).get('id') }}|{{ ((event.venue or {}).get('check') or {}).get('summary') }}|{{ (event.venue or {}).get('booked') }}">
+  {% if event.venue %}{% set cv = event.venue %}
+    <div class="venue-mini">
+      {% if cv.photo %}<img src="{{ cv.photo }}" alt="" referrerpolicy="no-referrer">{% endif %}
+      <div>
+        <div class="small muted">Venue</div>
+        <b>{{ cv.name }}</b>
+        {% if cv.type == "restaurant" %}{% set r = event.restaurant %}
+          <div class="small">{% if r and r.status == "responded" %}{{ "Can host you" if r.available_dates else "Replied" }}{% elif r and r.transcript %}Asked about availability{% else %}About to email them{% endif %}
+            {% if cv.check %} · {{ cv.check.summary }}{% endif %}</div>
+          <div class="small">{% if cv.booked %}Booked{% if cv.booked_for %} for {{ cv.booked_for|nice_date }}{% endif %}{% else %}Not booked yet{% endif %}</div>
+          {% if cv.url %}<a class="small" href="{{ cv.url }}" target="_blank" rel="noopener">View on Resy →</a>{% endif %}
+          {% if not cv.booked and cv.prompted_for %} · <a class="small" href="#" data-picnic-booked>I booked it</a>{% endif %}
+        {% else %}
+          <div class="small">{% if cv.check %}{{ cv.check.summary }} · {% endif %}{% if cv.booked %}Booked{% else %}Not booked yet{% endif %}</div>
+          <a class="small" href="{{ cv.url }}" target="_blank" rel="noopener">Book on SF Rec &amp; Park →</a>
+          {% if not cv.booked and cv.check %} · <a class="small" href="#" data-picnic-booked>I booked it</a>{% endif %}
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  {% if not event.window_start or event.status == "setup" or not event.attending %}
+    <div class="empty">Who can make which day shows up here as replies come in.</div>
+  {% else %}
+    <div class="small muted" style="margin-bottom:8px">
+      {% if event.date_mode == "specific" %}RSVPs for {{ event.window_start|long_date }}.
+      {% else %}{{ responded|length }} of {{ event.attending|length }} answered.
+        {% if summary.dates_everyone_free %}<b style="color:var(--green)">{{ summary.dates_everyone_free|length }} date{{ "s" if summary.dates_everyone_free|length != 1 }} work for everyone.</b>{% endif %}
+        {% if dates|length < all_dates %}Showing weekends and any day someone can do.{% endif %}
+      {% endif %}
+      {% if event.previous_dates %} Moved from {{ event.previous_dates|map("nice_date")|join(", ") }}.{% endif %}
+    </div>
+    <div class="grid-wrap">
+    <table class="avail">
+      <tr>
+        <th class="who"></th>
+        {% for d in dates %}{% set wd = d|nice_date %}
+        <th class="{% if d in summary.dates_everyone_free %}everyone{% endif %} {% if wd[:3] in ('Sat','Sun') %}weekend{% endif %}">{{ wd[:3] }}<br>{{ wd[4:] }}</th>
+        {% endfor %}
+      </tr>
+      {% for g in event.attending + (event.people|selectattr("status", "eq", "declined")|list) %}
+      <tr>
+        <th class="who">{% if g.key and not g.is_restaurant %}<span class="keystar" title="Key person">&#9733;&#xFE0E;</span> {% endif %}{{ g.first_name }}{% if g.is_restaurant %} <span class="muted small">(restaurant)</span>{% endif %}{% if g.role == "host" %} <span class="muted small">(host)</span>{% endif %}
+          <span class="pill {{ g.status }}">{{ {"invited": "waiting", "responded": "replied", "declined": "can't come"}[g.status] }}</span></th>
+        {% for d in dates %}
+        <td class="{% if g.status == 'invited' %}pending{% elif g.status == 'declined' %}no{% elif d in g.available_dates %}yes{% elif g.is_restaurant %}busy{% endif %} {% if d == chosen %}chosen{% endif %}">
+          {% if d in g.available_dates %}✓{% elif g.status == "declined" or (g.status == "responded" and event.date_mode == "specific") %}✗{% endif %}
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    </div>
+    <div class="legend small muted"><span class="sw yes"></span> free <span class="sw pending"></span> waiting {% if event.restaurant %}<span class="sw busy"></span> restaurant booked{% endif %} <span class="sw chosen"></span> {{ "booked" if event.booked_date else "proposed" }}</div>
+  {% endif %}
+</div>
+
+<div class="tab-body" data-tab="shopping" data-sig="{{ (shop or {}).get('status') }}|{{ ((shop or {}).get('items') or [])|length }}|{{ (delivery or {}).get('status') }}"{% if shopping_offer and not shop %} data-attn="1"{% endif %}>
+  {% if not shop and shopping_offer %}
+    <div class="offer-card">
+      <b>Want a shopping list for the shower?</b>
+      <p class="small muted">About {{ event.headcount }} people, 10 items, found at your nearest Kroger-family store, with photos and prices, delivered on the morning of the shower.</p>
+      <button class="btn" data-make-list>Yes, make the list</button>
+    </div>
+  {% elif not shop %}
+    <div class="empty">{% if event.setting == "out" and not (event.venue and event.venue.type == "picnic") %}A shopping list is offered for parties at home or picnics.{% else %}Say yes in the chat and I'll build a shopping list here: 10 items from your nearest Kroger-family store.{% endif %}</div>
+  {% elif shop.status == "error" %}
+    <div class="error">{{ shop.error }}</div>
+  {% else %}
+    <div class="shop-head">
+      <div>
+        <b>{{ shop.title or "Planning your list…" }}</b>
+        <div class="small muted">{% if shop.store %}Delivery from {{ shop.store.name }} to {{ event.location.postal or "94118" }}{% else %}Finding your nearest Kroger-family store…{% endif %}</div>
+      </div>
+    </div>
+    {% if shop.status != "ready" %}<div class="small muted building">{{ "Planning 10 items with Claude…" if shop.status == "planning" else "Finding products at " ~ shop.store.name ~ "…" }}</div>{% endif %}
+    <div class="items">
+    {% for it in shop["items"] %}{% set i = loop.index0 %}
+      {% set p = it.matches[it.chosen] if it.matches else None %}
+      <div class="item{% if it.removed %} removed{% endif %}">
+        {% if p and p.image %}<img src="{{ p.image }}" alt="" loading="lazy">{% else %}<div class="noimg">{{ "" if shop.status != "ready" else "No photo" }}</div>{% endif %}
+        <div class="ibody">
+          <div><b>{{ it.display_name }}</b> <span class="small muted">· {{ it.category }}</span></div>
+          {% if p %}
+            <div class="small">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.description }}</a>{% else %}{{ p.description }}{% endif %} <span class="muted">{{ p.size }}</span></div>
+            <div class="small">{% if p.promo_price %}<b>{{ p.promo_price|money }}</b> <s class="muted">{{ p.price|money }}</s>{% elif p.price %}<b>{{ p.price|money }}</b>{% else %}<span class="muted">price in store</span>{% endif %}
+              {% if not p.delivery %}<span class="warn">not available for delivery</span>{% endif %}</div>
+          {% elif shop.status == "ready" %}<div class="small muted">No good match at this store.</div>{% else %}<div class="small muted">{{ it.reason }}</div>{% endif %}
+          {% if shop.status == "ready" and not it.removed and it.matches|length > 1 %}
+            <select class="swap" data-shop="swap" data-item="{{ i }}">
+              {% for m in it.matches %}<option value="{{ loop.index0 }}" {% if loop.index0 == it.chosen %}selected{% endif %}>{{ m.description[:48] }}{% if m.price %} · {{ (m.promo_price or m.price)|money }}{% endif %}</option>{% endfor %}
+            </select>
+          {% endif %}
+        </div>
+        {% if shop.status == "ready" %}
+        <div class="iqty">
+          {% if it.removed %}<button class="btn ghost small" data-shop="restore" data-item="{{ i }}">Undo</button>
+          {% else %}
+          <div class="qty"><button data-shop="qty" data-item="{{ i }}" data-value="{{ it.quantity - 1 }}">−</button><span>{{ it.quantity }}</span><button data-shop="qty" data-item="{{ i }}" data-value="{{ it.quantity + 1 }}">+</button></div>
+          <button class="btn ghost small" data-shop="remove" data-item="{{ i }}">Remove</button>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+    </div>
+    {% if shop.status == "ready" %}
+    <form class="add-item" data-add-item>
+      <input name="item" placeholder="Add an item, e.g. chocolate milk" autocomplete="off" maxlength="60">
+      <button class="btn secondary small">Add</button>
+    </form>
+    <div class="shop-foot">
+      <div><b>Estimated total {{ shop_totals.total|money }}</b>{% if shop_totals.unavailable %} <span class="warn small">{{ shop_totals.unavailable }} item{{ "s" if shop_totals.unavailable != 1 }} not available for delivery</span>{% endif %}
+        <div><a class="small" href="#" data-kroger>See the list on kroger.com</a></div></div>
+    </div>
+    {% set dl = delivery if delivery and delivery.status != "cancelled" else None %}
+    <div class="delivery">
+      {% if not dl %}
+        <b>Schedule the delivery</b>
+        <div class="small muted">Delivered on the morning of the shower{% if event.booked_date %}, {{ event.booked_date|long_date }}{% else %} (once the date is set){% endif %}. Pick a window:</div>
+        <div class="slots">{% for value, label in delivery_slots %}
+          <button class="slot" data-shop="schedule" data-value="{{ value }}">{{ label }}</button>{% endfor %}</div>
+        <div class="small muted">A couple of days before, I'll ask you to confirm payment and place the order. I'll also add the delivery to your Google Calendar.</div>
+      {% else %}
+        {% set when = (dl.date or event.booked_date) %}
+        <div class="dl-row">
+          <div>
+            <b>{{ {"scheduled": "Delivery scheduled", "awaiting_payment": "Ready to order", "ordered": "Ordered"}.get(dl.status, "Delivery") }}</b>
+            <div class="small">{% if when %}{{ when|long_date }}{% else %}The morning of the shower{% endif %}, {{ slot_label(dl.slot) }}</div>
+            <div class="small muted">
+              {% if dl.status == "scheduled" and not when %}Waiting for the date to be set.
+              {% elif dl.status == "scheduled" %}I'll ask you to confirm payment {% if dl.order_at %}on {{ dl.order_at[:10]|nice_date }}{% else %}a couple of days before{% endif %}, then place the order.{% if dl.reminder_id %} It's on your Google Calendar.{% endif %}
+              {% elif dl.status == "awaiting_payment" %}Confirm payment in the chat to place the order.
+              {% else %}Placed with {{ shop.store.name }}. (Demo: nothing was charged.){% endif %}
+            </div>
+          </div>
+          {% if dl.status != "ordered" %}<button class="btn ghost small" data-shop="cancel_delivery">Cancel</button>{% endif %}
+        </div>
+        {% if dl.status == "scheduled" %}
+        <div class="slots small">Change window: {% for value, label in delivery_slots %}
+          <button class="slot{% if value == dl.slot %} on{% endif %}" data-shop="schedule" data-value="{{ value }}">{{ label }}</button>{% endfor %}</div>
+        {% endif %}
+      {% endif %}
+    </div>
+    <dialog id="kroger-dialog">
+      <h2>Your list for {{ shop.store.name }}</h2>
+      <div class="small muted">Tap an item to open it on kroger.com</div>
+      <ul>{% for it in shop["items"] if not it.removed and it.matches %}{% set p = it.matches[it.chosen] %}
+        <li>{{ it.quantity }} × <a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.description }}</a>{% if p.promo_price or p.price %} · {{ (p.promo_price or p.price)|money }}{% endif %}</li>{% endfor %}
+      </ul>
+      <div><b>Estimated total {{ shop_totals.total|money }}</b></div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <a class="btn" href="https://www.kroger.com/" target="_blank" rel="noopener">Go to kroger.com →</a>
+        <button class="btn secondary" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </dialog>
+    {% endif %}
+  {% endif %}
+</div>
+
+{% set email_count = event.guests|map(attribute="transcript")|map("length")|sum %}
+{% set ns = namespace(sig="") %}{% for g in invitees %}{% set ns.sig = ns.sig ~ status_of(g)[1] ~ "," %}{% endfor %}
+<div class="tab-body" data-tab="invitees" data-sig="{{ email_count }}|{{ ns.sig }}">
+  {% if not invitees %}
+  <div class="empty">Your invitees, their replies and the email threads show up here.</div>
+  {% else %}
+  <div class="plist">
+    <div class="legend small muted"><span class="dot green"></span> Confirmed <span class="dot yellow"></span> Waiting <span class="dot red"></span> Can't make it</div>
+    {% for g in invitees %}{% set st = status_of(g) %}
+    <button class="prow" data-person="{{ g.token }}">
+      <span class="dot {{ st[0] }}"></span>
+      <span class="pname"><b>{{ g.name or g.email }}</b>
+        {% if g.role == "host" %}<span class="tag">Host</span>{% elif g.key %}<span class="tag">Key person</span>{% endif %}{% if g.is_restaurant %}<span class="tag">Restaurant</span>{% endif %}
+        <small>{{ g.real_email if g.is_restaurant else g.email }}</small></span>
+      <span class="pstat {{ st[0] }}">{{ st[1] }}</span>
+    </button>
+    {% endfor %}
+  </div>
+  {% for g in invitees %}{% set st = status_of(g) %}
+  <div class="person" data-person-view="{{ g.token }}" hidden>
+    <button class="btn ghost small" data-back>← All invitees</button>
+    <div class="phead">
+      <div class="pavatar {{ st[0] }}">{{ (g.name or g.email)[0]|upper }}</div>
+      <div class="pname"><b>{{ g.name or g.email }}</b>
+        {% if g.role == "host" %}<span class="tag">Host</span>{% elif g.key %}<span class="tag">Key person</span>{% endif %}{% if g.is_restaurant %}<span class="tag">Restaurant</span>{% endif %}
+        <small>{% if g.is_restaurant %}Would go to {{ g.real_email }} (sent to {{ g.email }} for this demo){% else %}{{ g.email }}{% endif %}</small></div>
+      <span class="pstat {{ st[0] }}">{{ st[1] }}</span>
+    </div>
+    {% if g.status == "responded" or g.notes or g.reminders_sent %}
+    <div class="facts small">
+      {% if g.status == "responded" %}
+        {% if event.date_mode == "specific" %}<div><span class="muted">RSVP</span> {{ "Yes" if g.available_dates else "No" }} for {{ event.window_start|nice_date }}</div>
+        {% else %}<div><span class="muted">Free on</span> {{ g.available_dates|length }} day{{ "s" if g.available_dates|length != 1 }}{% if g.available_dates %}: {{ g.available_dates[:6]|map("nice_date")|join(", ") }}{% if g.available_dates|length > 6 %} and {{ g.available_dates|length - 6 }} more{% endif %}{% endif %}</div>{% endif %}
+      {% endif %}
+      {% if g.notes %}<div><span class="muted">Notes</span> {{ g.notes }}</div>{% endif %}
+      {% if g.reminders_sent %}<div><span class="muted">Reminders</span> {{ g.reminders_sent }}</div>{% endif %}
+    </div>
+    {% endif %}
+    <h3 class="thread-h">Emails</h3>
+    {% for t in g.transcript %}
+    <div class="msg {{ t.direction }}"><div class="meta">{{ "Agent, as " ~ event.organizer_name.split()[0] if t.direction == "out" else g.first_name }} · {{ t.at|clock(event.timezone) }}</div>{{ t.body }}</div>
+    {% else %}
+    <div class="muted small">No emails yet.</div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+
+<div class="tab-body" data-tab="activity" data-sig="{{ activity|length }}">
+  {% for a in activity %}
+  <div class="act {{ a.kind }}">
+    <div class="kind">{{ {"thinking":"Thinking","action":"Action","email_out":"Sent","email_in":"Received","note":"Summary","organizer":"You","system":"App","error":"Error","question":"Question","lookup":"Lookup"}.get(a.kind, "") }}</div>
+    <div><div class="t">{{ a.at|clock(event.timezone) }}</div><div class="text">{{ a.text }}</div></div>
+  </div>
+  {% else %}
+  <div class="empty">Once setup is done, you'll see what the agent is thinking, deciding and sending here.</div>
+  {% endfor %}
+</div>

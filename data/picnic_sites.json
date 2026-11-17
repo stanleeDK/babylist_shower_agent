@@ -1,0 +1,629 @@
+[
+  {
+    "id": "picnic-1776",
+    "facility_id": 1776,
+    "name": "Picnic Area at 10th Ave Meadow",
+    "park": "Mountain Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7872442,
+    "lng": -122.4693517,
+    "address": "12th Ave & Lake St",
+    "amenities": [
+      "Alcohol",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1776.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1776",
+    "info_url": "https://sfrecpark.org/984/Mountain-Lake-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-1777",
+    "facility_id": 1777,
+    "name": "Picnic Area at 11th Ave Meadow",
+    "park": "Mountain Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7872442,
+    "lng": -122.4693517,
+    "address": "12th Ave & Lake St",
+    "amenities": [
+      "Alcohol",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1777.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1777",
+    "info_url": "https://sfrecpark.org/984/Mountain-Lake-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-1778",
+    "facility_id": 1778,
+    "name": "Picnic Area at 8th Ave, 2 table",
+    "park": "Mountain Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7872442,
+    "lng": -122.4693517,
+    "address": "12th Ave & Lake St",
+    "amenities": [
+      "Alcohol",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1778.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1778",
+    "info_url": "https://sfrecpark.org/984/Mountain-Lake-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-1773",
+    "facility_id": 1773,
+    "name": "Picnic Area at 9th Ave Shelter",
+    "park": "Mountain Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7872442,
+    "lng": -122.4693517,
+    "address": "12th Ave & Lake St",
+    "amenities": [],
+    "photo": "/static/picnic/1773.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1773",
+    "info_url": "https://sfrecpark.org/984/Mountain-Lake-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-1779",
+    "facility_id": 1779,
+    "name": "Picnic Area at 12th Ave, 1 table",
+    "park": "Mountain Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7872442,
+    "lng": -122.4693517,
+    "address": "12th Ave & Lake St",
+    "amenities": [
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1779.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1779",
+    "info_url": "https://sfrecpark.org/984/Mountain-Lake-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-1202",
+    "facility_id": 1202,
+    "name": "14th Ave East Meadow Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 150,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1202.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1202",
+    "info_url": "https://sfrecpark.org/906/GGP---14th-Avenue-East-Picnic-Area"
+  },
+  {
+    "id": "picnic-78",
+    "facility_id": 78,
+    "name": "Bunny Meadow Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 200,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/78.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/78",
+    "info_url": "https://sfrecpark.org/912/GGP---Bunny-Meadow-Picnic-Area"
+  },
+  {
+    "id": "picnic-133",
+    "facility_id": 133,
+    "name": "Peacock Meadow Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 150,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/133.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/133",
+    "info_url": "https://sfrecpark.org/931/GGP---Peacock-Meadow-Picnic-Area"
+  },
+  {
+    "id": "picnic-132",
+    "facility_id": 132,
+    "name": "Panhandle Picnic Lawn",
+    "park": "Golden Gate Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/132.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/132",
+    "info_url": "https://sfrecpark.org/930/GGP---Panhandle-Picnic-Area"
+  },
+  {
+    "id": "picnic-2317",
+    "facility_id": 2317,
+    "name": "Blue Heron (Stow) Lake Grass Area South",
+    "park": "Golden Gate Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/2317.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/2317",
+    "info_url": "https://sfrecpark.org/1231/GGP-Stow-Lake-South-Side-Lawn"
+  },
+  {
+    "id": "picnic-141",
+    "facility_id": 141,
+    "name": "Strawberry Hill Near Chinese Pav 2 tables",
+    "park": "Golden Gate Park",
+    "capacity": 25,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ"
+    ],
+    "photo": "/static/picnic/141.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/141",
+    "info_url": "https://sfrecpark.org/915/GGP---Chinese-Pavilion-at-Stow-Lake-Picn"
+  },
+  {
+    "id": "picnic-92",
+    "facility_id": 92,
+    "name": "George Washington Grove Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 175,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ"
+    ],
+    "photo": "/static/picnic/92.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/92",
+    "info_url": "https://sfrecpark.org/922/GGP---George-Washington-Grove-Picnic-Are"
+  },
+  {
+    "id": "picnic-105",
+    "facility_id": 105,
+    "name": "Hoover Redwood Grove Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 150,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper"
+    ],
+    "photo": "/static/picnic/105.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/105",
+    "info_url": "https://sfrecpark.org/925/GGP---Hoover-Redwood-Grove-Picnic-Area"
+  },
+  {
+    "id": "picnic-142",
+    "facility_id": 142,
+    "name": "Strawberry Hill Top-2 Picnic Table",
+    "park": "Golden Gate Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ"
+    ],
+    "photo": "/static/picnic/142.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/142",
+    "info_url": "https://sfrecpark.org/941/GGP---Strawberry-Hill-Picnic-Area"
+  },
+  {
+    "id": "picnic-135",
+    "facility_id": 135,
+    "name": "Pioneer Log Cabin Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 150,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/135.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/135",
+    "info_url": "https://sfrecpark.org/933/GGP---Pioneer-Log-Cabin-Picnic-Area"
+  },
+  {
+    "id": "picnic-1180",
+    "facility_id": 1180,
+    "name": "Picnic Area at Plgrnd 3 tables&grill",
+    "park": "Garfield Square",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7502172,
+    "lng": -122.412254,
+    "address": "1271 Treat St",
+    "amenities": [
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1180.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1180",
+    "info_url": "https://sfrecpark.org/905/Garfield-Square-Picnic-Area"
+  },
+  {
+    "id": "picnic-809",
+    "facility_id": 809,
+    "name": "Picnic Area, Highland, 4 tables/2grills",
+    "park": "Holly Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7372171,
+    "lng": -122.4199467,
+    "address": "Holly Park Circle",
+    "amenities": [
+      "BBQ",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/809.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/809",
+    "info_url": "https://sfrecpark.org/951/Holly-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-131",
+    "facility_id": 131,
+    "name": "Old Speedway Meadow Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 400,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper"
+    ],
+    "photo": "/static/picnic/131.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/131",
+    "info_url": "https://sfrecpark.org/929/GGP---Old-Speedway-Meadow-Picnic-Area"
+  },
+  {
+    "id": "picnic-134",
+    "facility_id": 134,
+    "name": "Pioneer East Meadow Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 200,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/134.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/134",
+    "info_url": "https://sfrecpark.org/932/GGP---Pioneer-East-Meadow-Picnic-Area"
+  },
+  {
+    "id": "picnic-87",
+    "facility_id": 87,
+    "name": "Doughboy Meadow Picnic Area",
+    "park": "Golden Gate Park",
+    "capacity": 150,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/87.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/87",
+    "info_url": "https://sfrecpark.org/918/GGP---Doughboy-Meadow-Picnic-Area"
+  },
+  {
+    "id": "picnic-138",
+    "facility_id": 138,
+    "name": "Robin Williams Tables 04, 05 & 06",
+    "park": "Golden Gate Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7693681,
+    "lng": -122.4821837,
+    "address": "Park Headquarters, 501 Stanyan St",
+    "amenities": [
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/138.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/138",
+    "info_url": "https://sfrecpark.org/935/GGP---Robin-Williams-Meadow-Tables-4-5-6"
+  },
+  {
+    "id": "picnic-1296",
+    "facility_id": 1296,
+    "name": "Picnic Area at Bldg w Brick BBQ",
+    "park": "Pine Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7364941,
+    "lng": -122.4880708,
+    "address": "Sloat Blvd & Vale St",
+    "amenities": [
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1296.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1296",
+    "info_url": "https://sfrecpark.org/990/Pine-Lake-Picnic-Area"
+  },
+  {
+    "id": "picnic-1297",
+    "facility_id": 1297,
+    "name": "Picnic Area Circle Pit at Bldg",
+    "park": "Pine Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7364941,
+    "lng": -122.4880708,
+    "address": "Sloat Blvd & Vale St",
+    "amenities": [
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1297.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1297",
+    "info_url": "https://sfrecpark.org/990/Pine-Lake-Picnic-Area"
+  },
+  {
+    "id": "picnic-1299",
+    "facility_id": 1299,
+    "name": "Picnic Area, Hill, 3 tables & Grill",
+    "park": "Pine Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7364941,
+    "lng": -122.4880708,
+    "address": "Sloat Blvd & Vale St",
+    "amenities": [
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1299.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1299",
+    "info_url": "https://sfrecpark.org/990/Pine-Lake-Picnic-Area"
+  },
+  {
+    "id": "picnic-1300",
+    "facility_id": 1300,
+    "name": "Picnic Area, Hill, w/ Circle Pit",
+    "park": "Pine Lake Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7364941,
+    "lng": -122.4880708,
+    "address": "Sloat Blvd & Vale St",
+    "amenities": [
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1300.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1300",
+    "info_url": "https://sfrecpark.org/990/Pine-Lake-Picnic-Area"
+  },
+  {
+    "id": "picnic-2446",
+    "facility_id": 2446,
+    "name": "Picnic Tables",
+    "park": "Golden Gate Heights Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7499913,
+    "lng": -122.4695685,
+    "address": "2002 12th Ave",
+    "amenities": [],
+    "photo": "/static/picnic/2446.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/2446",
+    "info_url": "https://sfrecpark.org/1661/Golden-Gate-Heights-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-386",
+    "facility_id": 386,
+    "name": "Lsutter 2 tables at Gazebo lower",
+    "park": "Louis Sutter Playground",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7224769,
+    "lng": -122.4136718,
+    "address": "555 Yale St @ University & Wayland",
+    "amenities": [],
+    "photo": "/static/picnic/386.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/386",
+    "info_url": "https://sfrecpark.org/976/Louis-Sutter-Playground-Picnic-Area"
+  },
+  {
+    "id": "picnic-384",
+    "facility_id": 384,
+    "name": "LSutter 4 Tables at Lake nr clubhouse",
+    "park": "Louis Sutter Playground",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7224769,
+    "lng": -122.4136718,
+    "address": "555 Yale St @ University & Wayland",
+    "amenities": [
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/384.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/384",
+    "info_url": "https://sfrecpark.org/976/Louis-Sutter-Playground-Picnic-Area"
+  },
+  {
+    "id": "picnic-385",
+    "facility_id": 385,
+    "name": "LSutter 5 Tables at Lake nr parking lot",
+    "park": "Louis Sutter Playground",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7224769,
+    "lng": -122.4136718,
+    "address": "555 Yale St @ University & Wayland",
+    "amenities": [
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/385.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/385",
+    "info_url": "https://sfrecpark.org/976/Louis-Sutter-Playground-Picnic-Area"
+  },
+  {
+    "id": "picnic-1565",
+    "facility_id": 1565,
+    "name": "Picnic Area at Peru Playground",
+    "park": "John Mclaren Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7174542,
+    "lng": -122.4175419,
+    "address": "Mansell & Visitacion",
+    "amenities": [
+      "BBQ",
+      "Jumper"
+    ],
+    "photo": "/static/picnic/1565.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1565",
+    "info_url": "https://sfrecpark.org/957/John-McLaren-Park---Peru-Playground-Picn"
+  },
+  {
+    "id": "picnic-1562",
+    "facility_id": 1562,
+    "name": "Picnic Area EAST at John Shelley B, 5 tables",
+    "park": "John Mclaren Park",
+    "capacity": 75,
+    "booking_type": "Full Day",
+    "lat": 37.7174542,
+    "lng": -122.4175419,
+    "address": "Mansell & Visitacion",
+    "amenities": [
+      "Alcohol",
+      "BBQ",
+      "Jumper",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1562.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1562",
+    "info_url": "https://sfrecpark.org/956/John-McLaren-Park-John-F-Shelley-Drive"
+  },
+  {
+    "id": "picnic-2316",
+    "facility_id": 2316,
+    "name": "Picnic 7 Tbls, 2 Grls, Firepit",
+    "park": "Hilltop Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7329005,
+    "lng": -122.3836514,
+    "address": "La Salle & Whitney Young Circl",
+    "amenities": [
+      "BBQ",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/2316.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/2316",
+    "info_url": "https://sfrecpark.org/950/Hilltop-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-2315",
+    "facility_id": 2315,
+    "name": "Picnic Area 4 Tables, 1 Grill",
+    "park": "Hilltop Park",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7329005,
+    "lng": -122.3836514,
+    "address": "La Salle & Whitney Young Circl",
+    "amenities": [
+      "BBQ",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/2315.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/2315",
+    "info_url": "https://sfrecpark.org/950/Hilltop-Park-Picnic-Area"
+  },
+  {
+    "id": "picnic-1429",
+    "facility_id": 1429,
+    "name": "Picnic Area at Bldg Plaza",
+    "park": "Sunnyside Playground",
+    "capacity": 50,
+    "booking_type": "Full Day",
+    "lat": 37.7336767,
+    "lng": -122.4474911,
+    "address": "Foerster & Melrose St",
+    "amenities": [
+      "BBQ",
+      "Restrooms"
+    ],
+    "photo": "/static/picnic/1429.jpg",
+    "book_url": "https://anc.apm.activecommunities.com/sfrecpark/reservation/landing/search/detail/1429",
+    "info_url": "https://sfrecpark.org/1012/Sunnyside-Playground-Picnic-Area"
+  }
+]

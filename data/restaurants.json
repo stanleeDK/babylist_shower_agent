@@ -1,0 +1,192 @@
+[
+  {
+    "id": "resy-3267",
+    "resy_id": 3267,
+    "name": "Heritage Restaurant and Bar",
+    "neighborhood": "Inner Richmond",
+    "cuisine": [
+      "American"
+    ],
+    "price_range": 2,
+    "rating": 4.7,
+    "lat": 37.78305,
+    "lng": -122.46684,
+    "address": "708 Clement St, San Francisco, CA 94118",
+    "phone": "+14153862200",
+    "website": "http://www.heritagerestaurantbar.com",
+    "email": "heritagerestaurantbar@gmail.com",
+    "email_source": "Resy",
+    "photo": "https://image.resy.com/3/003/2/3267/4e79614f1ea2ece4065526b17208cc7fcf3b3e41/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/3267/4e79614f1ea2ece4065526b17208cc7fcf3b3e41/jpg/640x360",
+      "https://image.resy.com/3/003/2/3267/3b5896e4f380e238e67ae8f8dc05013d95191af4/jpg/640x360",
+      "https://image.resy.com/3/003/2/3267/9203d3cd1c078d8fa750b80c1c0296df9a6e58f0/jpg/640x360",
+      "https://image.resy.com/3/003/2/3267/44b21b3f611a770fd70112ff2ccd5932a9d3d9b2/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/heritage-restaurant-and-bar",
+    "large_party_message": "For parties of 19 or more, please contact the restaurant directly at 415-386-2200 or email heritagerestaurantbar@gmail.com.",
+    "description": "Because the rustic eatery delivers bright and fresh plates that truly highlight California\u2019s unparalleled bounty."
+  },
+  {
+    "id": "resy-94120",
+    "resy_id": 94120,
+    "name": "Laughing Monk",
+    "neighborhood": "NOPA",
+    "cuisine": [
+      "Gastropub"
+    ],
+    "price_range": 1,
+    "rating": 4.0,
+    "lat": 37.7757046,
+    "lng": -122.4486709,
+    "address": "1785 Fulton Street, San Francisco, CA 94117",
+    "phone": "+14156386667",
+    "website": "https://laughingmonk.com",
+    "email": "nopa@laughingmonk.com",
+    "email_source": "Resy",
+    "photo": "https://image.resy.com/3/003/2/94120/7bad14504a444e75f66ecb0a82b07caa5867cf72/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/94120/7bad14504a444e75f66ecb0a82b07caa5867cf72/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/laughing-monk",
+    "large_party_message": "Please email nopa@laughingmonk.com for parties larger than 15 people.",
+    "description": "The Laughing Monk SF Gastropub\nFounded in San Francisco in 2016, Laughing Monk Brewing crafts bold, approachable beers inspired by Belgian-style traditions. From crisp pilsners to hazy IPAs, our rotating lineup pairs perfectly with hearty pub fare and plant-forward dishes. Stop by Fulton Street for "
+  },
+  {
+    "id": "resy-97441",
+    "resy_id": 97441,
+    "name": "Harajuku Sushi",
+    "neighborhood": "Richmond District",
+    "cuisine": [
+      "Japanese"
+    ],
+    "price_range": 1,
+    "rating": 4.3,
+    "lat": 37.782711499066785,
+    "lng": -122.47878800439796,
+    "address": "1814 Clement St, San Francisco, CA 94121",
+    "phone": "+14153872441",
+    "website": "https://www.harajukusushi.com",
+    "email": "sushi@harajukusushi.com",
+    "email_source": "website",
+    "photo": "https://image.resy.com/3/003/2/97441/8ea6964ae0f8f65eaa88a684d3077971db200b02/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/97441/8ea6964ae0f8f65eaa88a684d3077971db200b02/jpg/640x360",
+      "https://image.resy.com/3/003/2/97441/b2285a98c659adc5894278993dbe566be9c684ea/jpg/640x360",
+      "https://image.resy.com/3/003/2/97441/00ad9a03ab44e14b1a79bedb43b63a1b797dd918/jpg/640x360",
+      "https://image.resy.com/3/003/2/97441/742208a11d86e173579650fe7c59250c4f2e7264/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/harajuku-sushi",
+    "large_party_message": "Please contact us directly if your party is over 14 people.",
+    "description": "The sweetest five words in the English language: all\u2013you-can-eat sushi. Need we say any more?"
+  },
+  {
+    "id": "resy-5177",
+    "resy_id": 5177,
+    "name": "Tsunami - Panhandle",
+    "neighborhood": "NoPa",
+    "cuisine": [
+      "Japanese"
+    ],
+    "price_range": 3,
+    "rating": 4.7,
+    "lat": 37.77699,
+    "lng": -122.43857,
+    "address": "1306 Fulton St, San Francisco, CA 94117",
+    "phone": "+14155677664",
+    "website": "https://tsunamipanhandle.com/",
+    "email": "dajanigroup@aol.com",
+    "email_source": "Resy",
+    "photo": "https://image.resy.com/3/003/2/5177/ea8aa7c68fcd0c0c579a2e00aacc93a3f2502291/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/5177/ea8aa7c68fcd0c0c579a2e00aacc93a3f2502291/jpg/640x360",
+      "https://image.resy.com/3/003/2/5177/b7f5962b17da63bb7bea40e34cb5e27e97246a57/jpg/640x360",
+      "https://image.resy.com/3/003/2/5177/729f1a1304bf714b7483f68726b80c7ba011169f/jpg/640x360",
+      "https://image.resy.com/3/003/2/5177/a7ba639b44beb7dc733ec250313037f5108f25f5/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/tsunami-panhandle",
+    "large_party_message": "For parties of 13 to 20 guests or full restaurant buy out, please call (415) 567 7664 or email dajanigroup@aol.com\nMinimum spending of $75 per person is required for parties of 13 and above",
+    "description": "For all things sake, shochu, and seafood, Tsunami Panhandle does not disappoint. Enjoy an extensive collection of sake curated by a certified sake sommelier, plus fresh fish flown in daily. "
+  },
+  {
+    "id": "resy-97467",
+    "resy_id": 97467,
+    "name": "Esme",
+    "neighborhood": "San Francisco",
+    "cuisine": [
+      "French Bistro"
+    ],
+    "price_range": 2,
+    "rating": 4.8,
+    "lat": 37.772873478579946,
+    "lng": -122.43738871974021,
+    "address": "311 Divisadero St, San Francisco, CA 94117",
+    "phone": "+14156607805",
+    "website": "http://www.esmerestaurantsf.com",
+    "email": "events@esmerestaurantsf.com",
+    "email_source": "Resy",
+    "photo": "https://image.resy.com/3/003/2/97467/d99e264ae85e7a639d4627af14efd9846e22518e/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/97467/d99e264ae85e7a639d4627af14efd9846e22518e/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/esme-ca",
+    "large_party_message": "For groups larger than 14 we require private dining, please email us at events@esmerestaurantsf.com",
+    "description": "It's a neighborhood bistro from chef Susan Dunn (Pearl 6101 and Paladar 511) that continues the Golden State's great legacy of California cuisine, rooted in French traditions."
+  },
+  {
+    "id": "resy-82044",
+    "resy_id": 82044,
+    "name": "Casaro Osteria",
+    "neighborhood": "Union Street",
+    "cuisine": [
+      "Italian"
+    ],
+    "price_range": 2,
+    "rating": 4.5,
+    "lat": 37.7976459372692,
+    "lng": -122.434524789448,
+    "address": "2136 Union Street, San Francisco, CA 94123",
+    "phone": "+14153747788",
+    "website": "https://www.casaroosteria.com/",
+    "email": "ciao@casaroosteria.com",
+    "email_source": "Resy",
+    "photo": "https://image.resy.com/3/003/2/82044/ba6adeeb3573217ccfd54c6ed063d117c94e992b/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/82044/ba6adeeb3573217ccfd54c6ed063d117c94e992b/jpg/640x360",
+      "https://image.resy.com/3/003/2/82044/72520081d98e662a73ce2fa9add28993ae3e0e16/jpg/640x360",
+      "https://image.resy.com/3/003/2/82044/140ecff02fbffda516a53b43ab59fdc097152f67/jpg/640x360",
+      "https://image.resy.com/3/003/2/82044/971b19df892aa6a282630c244814dce8ddaf924e/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/casaro-osteria",
+    "large_party_message": "For groups of 14 or more, we offer a Prix Fixe menu with various options for large gatherings. To arrange this, please email us directly at ciao@casaroosteria.com",
+    "description": "Sometimes you feel like you\u2019re in the heart of Italy here, and not sitting in the Cow Hollow sibling to Il Casaro. It could be the colorful rooster plates, face-shaped cups, or maybe the perfectly chewy Neapolitan pizzas and al dente housemade pasta. Whatever it is, it\u2019s precisely where you want to "
+  },
+  {
+    "id": "resy-60879",
+    "resy_id": 60879,
+    "name": "Poesia Osteria Italiana",
+    "neighborhood": "San Francisco",
+    "cuisine": [
+      "Italian"
+    ],
+    "price_range": 1,
+    "rating": 4.8,
+    "lat": 37.7613162631871,
+    "lng": -122.434349173193,
+    "address": "4072 18th St, San Francisco, CA 94114",
+    "phone": "+14152529325",
+    "website": "https://www.poesiasf.com/",
+    "email": "poesiarestaurant@gmail.com",
+    "email_source": "Resy",
+    "photo": "https://image.resy.com/3/003/2/60879/bf4b731f4309f7a5a940dd50517d5af11d47f5cc/jpg/640x360",
+    "photos": [
+      "https://image.resy.com/3/003/2/60879/bf4b731f4309f7a5a940dd50517d5af11d47f5cc/jpg/640x360",
+      "https://image.resy.com/3/003/2/60879/6dcf8f378b1db06801a43c3b3d98fee7adc195e5/jpg/640x360",
+      "https://image.resy.com/3/003/2/60879/84430139be87de1fc4975a8c5820711d8030b98b/jpg/640x360",
+      "https://image.resy.com/3/003/2/60879/c1b37bbfb5d0cbf1b1eff1dde7c61cd22e108efe/jpg/640x360"
+    ],
+    "resy_url": "https://resy.com/cities/sf/venues/poesia-osteria-italiana",
+    "large_party_message": "For large groups please email us. poesiarestaurant@gmail.com",
+    "description": "Owned and operated by Francesco d'Ippolito, and staffed by an experienced, multi-cultured family of hosts whom are all passionate about the experience and concept, Poesia is the latest addition of authentic Italian cuisine to call San Francisco its home. Nestled in the middle of the vibrant and colo"
+  }
+]

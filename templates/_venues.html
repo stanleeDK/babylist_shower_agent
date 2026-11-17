@@ -1,0 +1,45 @@
+{# The "View all" panel: every saved restaurant or picnic area, with live availability. #}
+<div class="dr-head">
+  <div>
+    <h2>{{ "Restaurants that take groups" if kind == "restaurants" else "Park picnic areas" }}</h2>
+    <div class="small muted">
+      {{ items|length }} near {{ place }} ·
+      {% if day %}availability for {{ day|long_date }}, {{ party }} people{% elif kind == "restaurants" %}availability for a party of {{ party }} over the next 30 days{% else %}pick a date to check availability{% endif %}
+    </div>
+    {% if not can_choose %}<div class="small muted">{% if setting == "home" %}You're hosting at home, so these are just for inspiration.{% else %}You can choose one once your guest list is in and the agent has started.{% endif %}</div>{% endif %}
+  </div>
+  <button class="dr-close" data-close-drawer aria-label="Close">×</button>
+</div>
+<div class="vgrid-all">
+{% for v in items %}
+  <article class="vcard-all">
+    {% if v.photo %}<img src="{{ v.photo }}" alt="" loading="lazy" referrerpolicy="no-referrer">{% else %}<div class="noimg"></div>{% endif %}
+    <div class="vb">
+      <div class="vt">{{ v.name if kind == "restaurants" else v.park }}</div>
+      <div class="small muted">
+        {% if kind == "restaurants" %}{{ v.cuisine|join(", ") }}{% if v.neighborhood %} · {{ v.neighborhood }}{% endif %}{% if v.price_range %} · {{ "$" * v.price_range }}{% endif %}{% if v.rating %} · {{ v.rating }} on Resy{% endif %}
+        {% else %}{{ v.name }} · up to {{ v.capacity }} people{% endif %} · {{ v.miles }} mi
+      </div>
+      <div class="avail-pill {{ v.availability.tone }}">{{ v.availability.text }}{% if v.availability.next %} (next: {{ v.availability.next|nice_date }}){% endif %}</div>
+      <dl class="contact small">
+        {% if v.address %}<dt>Address</dt><dd><a href="{{ maps_url(v) }}" target="_blank" rel="noopener">{{ v.address }}</a></dd>
+        {% else %}<dt>Map</dt><dd><a href="{{ maps_url(v) }}" target="_blank" rel="noopener">{{ v.park }} on Google Maps</a></dd>{% endif %}
+        {% if kind == "restaurants" %}
+          {% if v.phone %}<dt>Phone</dt><dd><a href="tel:{{ v.phone }}">{{ v.phone }}</a></dd>{% endif %}
+          {% if v.email %}<dt>Email</dt><dd><a href="mailto:{{ v.email }}">{{ v.email }}</a></dd>{% endif %}
+          {% if v.website %}<dt>Website</dt><dd><a href="{{ v.website }}" target="_blank" rel="noopener">{{ v.website.split("//")[-1].strip("/") }}</a></dd>{% endif %}
+        {% else %}
+          {% set am = v.amenities|amenities %}{% if am %}<dt>Has</dt><dd>{{ am|join(", ") }}</dd>{% endif %}
+          <dt>Booking</dt><dd>{{ v.booking_type or "Picnic area" }} reservation</dd>
+        {% endif %}
+      </dl>
+      <div class="vactions">
+        {% if v.id == current %}<span class="chosen-tag">Your venue</span>
+        {% elif can_choose %}<button class="btn small" data-choose="{{ v.id }}">{{ "Switch to this venue" if current else "Choose this venue" }}</button>{% endif %}
+        {% if kind == "restaurants" and v.resy_url %}<a class="btn small secondary" href="{{ v.resy_url }}" target="_blank" rel="noopener">View on Resy</a>
+        {% elif v.book_url %}<a class="btn small secondary" href="{{ v.book_url }}" target="_blank" rel="noopener">Book on SF Rec &amp; Park</a>{% endif %}
+      </div>
+    </div>
+  </article>
+{% endfor %}
+</div>

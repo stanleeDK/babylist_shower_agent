@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+<main class="narrow">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+  <h1>Your baby showers</h1>
+  <a class="btn" href="/events/new">+ Plan a baby shower</a>
+</div>
+{% for e in events %}
+<a href="/events/{{ e.id }}" class="card" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:inherit">
+  <div>
+    <b>{{ e.title if e.status != "setup" else "New baby shower" }}</b> {% if e.demo %}<span class="pill stopped">demo</span>{% endif %}
+    <div class="muted small">
+      {% if e.status == "setup" %}Still setting up{% else %}{{ e.people|length }} guests
+      {% if e.window_start %} · {% if e.date_mode == "specific" %}{{ e.window_start|nice_date }}{% else %}{{ e.window_start|nice_date }} – {{ e.window_end|nice_date }}{% endif %}{% endif %}
+      {% if e.venue %} · {{ e.venue.name }}{% endif %}{% endif %}
+    </div>
+  </div>
+  <div>
+    {% if e.booked_date %}<span class="muted small">{{ e.booked_date|long_date }}</span>{% endif %}
+    <span class="pill {{ e.status }}">{{ "setting up" if e.status == "setup" else e.status }}</span>
+  </div>
+</a>
+{% else %}
+<div class="card muted">No showers yet. <a href="/events/new">Plan your first one.</a></div>
+{% endfor %}
+</main>
+{% endblock %}

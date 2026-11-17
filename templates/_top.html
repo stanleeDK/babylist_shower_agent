@@ -1,0 +1,22 @@
+{# Re-rendered on every poll; shown above the tabs once the agent has started #}
+<div class="ev-title">
+  <b>{{ event.title }}</b>
+  <span class="pill {{ event.status }}">{{ {"collecting": "finding a date", "proposed": "date ready to book"}.get(event.status, event.status) }}</span>
+  {% if event.demo %}<span class="pill stopped">demo</span>{% endif %}
+  <div class="muted small">
+    {% if event.booked_date %}{{ event.booked_date|long_date }}{% if event.start_time %} at {{ event.start_time|nice_time }}{% endif %}
+    {% elif event.window_start %}{{ event.window_start|nice_date }} – {{ event.window_end|nice_date }}{% endif %}
+    {% if event.venue %} · {{ event.venue.name }}{% elif event.setting == "home" %} · at home{% endif %}
+  </div>
+</div>
+<div class="ev-actions">
+  {% if event.demo and event.status == "booked" %}
+    {% set sims = event.people|selectattr("persona")|rejectattr("status", "eq", "declined")|sort(attribute="key", reverse=True) %}
+    {% if sims %}<span class="small muted">Demo: simulate an email saying</span>{% endif %}
+    {% for g in sims %}
+    <button class="btn secondary small" data-simulate="{{ g.token }}" title="{{ g.first_name }} emails that they can no longer make it{% if g.key %}. A key person, so the agent will suggest rescheduling{% endif %}">{{ g.first_name }} can't make it{% if g.key %} (key){% endif %}</button>
+    {% endfor %}
+  {% endif %}
+  {% if event.demo and order_waiting %}<button class="btn secondary small" data-skip-order title="Demo: jump to a couple of days before the shower, when the groceries get ordered">Skip ahead to grocery ordering</button>{% endif %}
+  {% if event.status not in ("setup", "stopped", "done") %}<button class="btn ghost small" data-stop>Stop agent</button>{% endif %}
+</div>
